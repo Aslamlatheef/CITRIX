@@ -56,26 +56,12 @@ $csMonitoring = "Server=$ServerName;Initial Catalog=$MonitorDBName;Integrated Se
  
 Set-AdminDBConnection -DBConnection $cs
 Set-ConfigDBConnection -DBConnection $cs
-Set-AcctDBConnection -DBConnection $cs
-Set-AnalyticsDBConnection -DBConnection $cs
-Set-HypDBConnection -DBConnection $cs
-Set-ProvDBConnection -DBConnection $cs
-#Set-PvsVmDBConnection -DBConnection $cs
 Set-BrokerDBConnection -DBConnection $cs
 Set-EnvTestDBConnection -DBConnection $cs
 Set-LogDBConnection -DBConnection $cs
-Set-LogDBConnection -DataStore Logging -DBConnection $null
-Set-LogDBConnection -DBConnection $null
-Set-LogDBConnection -DBConnection $cs
 Set-LogDBConnection -DataStore Logging -DBConnection $csLogging
-Set-MonitorDBConnection -DBConnection $cs
-Set-MonitorDBConnection -DataStore Monitor -DBConnection $null
-Set-MonitorDBConnection -DBConnection $null
-Set-MonitorDBConnection -DBConnection $cs
 Set-MonitorDBConnection -DataStore Monitor -DBConnection $csMonitoring
-Set-AppLibDBConnection –DBConnection $null
-Set-AppLibDBConnection –DBConnection $cs
-Set-SfDBConnection -DBConnection $cs
+
  
 ## Enable Monitoring
 Set-MonitorConfiguration -DataCollectionEnabled $true
